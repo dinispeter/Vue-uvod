@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Vue-úvod</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <meta charset="UTF-8">
+  </head>
+
+<body>
+  <div id="app">
+    <header>
+        <h1>Ukážka pár vecí z Vue.js</h1>
+    </header>
+
+    <!-- handling user input -->
+    <p>{{test}}</p>
+    <button class="btn btn-success" v-on:click="reverseMessage">Prehoď správu</button>
+
+    <br><br>
+    <!-- v-model ukážka -->
+    <p><b>Ukážka directive v-model čiže directive ktorá prepojí naše html s vue.js data</b></p>
+    <p>{{message}}</p>
+    <input v-model="message" />
+
+    <br><br>
+    <!--vue.js podmienky -->
+    <p><b>Ukážka v-if čiže if podmienka</b></p>
+    <span v-if="seen">Teraz ma vidíš</span>
+    <p v-else>Teraz vidíš len mňa</p>
+
+    <br><br>
+    <!-- ukážka jednoduchého vue.js komponent -->
+    <p>Lepšie vysvetlenie ku komponentom je vo word časti mojej práce</p>
+    <span>Ukážka jednoduchého to-do zoznamu</span>
+    <ol>
+      <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+    ></todo-item>
+   </ol>
+
+</div>
+<script src="main.js"></script>
+
+</body>
+</html>
